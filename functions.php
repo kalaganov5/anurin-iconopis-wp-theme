@@ -1,4 +1,14 @@
 <?php
+// connect custom menu class
+require __DIR__ . '/inc/anurin-iconopis-menu.php';
+require __DIR__ . '/inc/anurin-iconopis-menu-footer.php';
+require __DIR__ . '/inc/contact-form7-settings.php';
+
+// debug function
+function anurin_iconopis_degug ($array) {
+	echo '<pre>' . print_r($array, 1) . '</pre>';
+};
+
 /**
  * Painter Yuriy Anurin functions and definitions
  *
@@ -11,6 +21,20 @@ if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
+
+// Enqueue Javascript With Type Module
+// https://www.faqcode4u.com/faq/232130/enqueue-javascript-with-type-module
+function add_type_attribute($tag, $handle, $src) {
+	// if not your script, do nothing and return original $tag
+	if ( 'anurin_iconopis_script' !== $handle ) {
+		return $tag;
+	}
+	// change the script tag by adding type="module" and return it.
+	$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+	return $tag;
+}
+add_filter('script_loader_tag', 'add_type_attribute' , 10, 3);
+
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -49,7 +73,9 @@ function anurin_iconopis_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'anurin-iconopis' ),
+			'menu_header_start_page' => esc_html__( 'Header Menu Start Page', 'anurin-iconopis' ),
+			'menu_header' => esc_html__( 'Header Menu', 'anurin-iconopis' ),
+			'menu_footer' => esc_html__( 'Footer Menu', 'anurin-iconopis' ),
 		)
 	);
 
@@ -138,14 +164,9 @@ add_action( 'widgets_init', 'anurin_iconopis_widgets_init' );
  * Enqueue scripts and styles.
  */
 function anurin_iconopis_scripts() {
-	wp_enqueue_style( 'anurin-iconopis-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'anurin-iconopis-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'anurin-iconopis-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_style('anurin_iconopis_main', get_template_directory_uri() . '/assets/css/style.css', array(), false);
+	wp_enqueue_style('anurin_iconopis_style_wordpress', get_template_directory_uri() . '/assets/css/style-wordpress.css', array(), false);
+	wp_enqueue_script('anurin_iconopis_script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'anurin_iconopis_scripts' );
 
@@ -175,4 +196,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
