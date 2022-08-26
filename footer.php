@@ -118,23 +118,7 @@
 				</a>
 			</li>
 		</ul>
-		<form class="contacts__form form" id="contact-form-modal" action="/" method="post">
-			<label class="form__label" for="user-name--modal">
-				Имя
-			</label>
-			<input class="form__input" type="text" id="user-name--modal" />
-			<label class="form__label" for="user-phone--modal">
-				Телефон <span class="form__text-muted">(обязательно)</span>
-			</label>
-			<input class="form__input" type="tel" id="user-phone--modal" placeholder="8 (999) 000-00-00" data-tel-input maxlength="18" required />
-			<span class="form__validation-note">Необходимо заполнить поле</span>
-			<label class="form__label" for="comments--modal">
-				Комментарий
-			</label>
-			<textarea class="form__comments" name="comments" id="comments--modal" cols="30" rows="2"></textarea>
-			<p class="form__text">Заполняя форму, я соглашаюсь с&nbsp;<a class="form__link" target="_blank" href="/privacy-policy">политикой конфиденциальности</a></p>
-			<button class="form__submit button" id="submit-button--modal" type="submit">Отправить</button>
-		</form>
+		<?php echo do_shortcode('[contact-form-7 id="22" title="contact-form" html_class="contacts__form form" html_id="contact-form-modal"]'); ?>
 	</div>
 </div>
 <div class="modal modal-portfolio">
