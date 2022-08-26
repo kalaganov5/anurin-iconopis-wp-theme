@@ -9,6 +9,10 @@
     width: 1px;
 }
 
+.wpcf7 {
+    max-width: 100%;
+}
+
 .wpcf7-response-output {
     display: none !important;
 }
