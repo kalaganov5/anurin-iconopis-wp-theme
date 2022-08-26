@@ -1,0 +1,28 @@
+.screen-reader-response {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+            clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.wpcf7-response-output {
+    display: none !important;
+}
+
+.contacts .wpcf7 {
+    margin-bottom: 20px;
+}
+
+.contacts__form.invalid .form__validation-note {
+    opacity: 1;
+}
+
+@media (min-width: 1200px) {
+    .contacts .wpcf7 {
+        grid-column: 2/3;
+    }
+}

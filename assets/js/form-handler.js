@@ -1,13 +1,13 @@
-import {showModal} from "./modal.js";
+import { showModal } from './modal.js';
+const contactFormMainId = 22;
 
 const formHandler = () => {
-  const forms = document.querySelectorAll(".form");
-  forms.forEach((item) => {
-    item.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      showModal('modal-success');
-    });
-  });
-}
+	// Успешная отправка формы
+	document.addEventListener( 'wpcf7mailsent', function( event ) {
+		if ( contactFormMainId === event.detail.contactFormId ) {
+			showModal( 'modal-success' );
+		}
+	}, false );
+};
 
-export {formHandler};
+export { formHandler };
