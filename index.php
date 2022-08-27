@@ -25,7 +25,7 @@
         </p>
         <ul class="portfolio__cards works">
           <li class="works__item">
-            <a href="" class="works__link">
+            <a href="<?php echo get_category_link(8); ?>" data-category="8" class="works__link">
               <picture class="works__pictures">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei.jpg" width="269" height="162" alt="Роспись в церкви Феодоровской иконы Божией Матери, город Ковров. Изображение пророков отличается закономерной последовательностью иконописных образов. Роспись внутри храма выполнена с применением акриловой и масляной краски." loading="lazy">
@@ -39,7 +39,7 @@
             </a>
           </li>
           <li class="works__item">
-            <a href="" class="works__link">
+            <a href="<?php echo get_category_link(7); ?>" data-category="7" class="works__link">
               <picture class="works__pictures">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon.jpg" width="269" height="162" alt="Икона &#34;Спас в Силах&#34; написана в академическом стиле живописи. Этапы написания иконы, в авторском исполнении, требуют разработки большого количества эскизов. Русская иконопись имеет много примеров изображения иконы &#34;Спас в Силах&#34;." loading="lazy">
@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="works__item">
-            <a href="" class="works__link">
+            <a href="<?php echo get_category_link(9); ?>" data-category="9" class="works__link">
               <picture class="works__pictures">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon.jpg" width="269" height="162" alt="Отрестоврированная икона Юрием Ануриным. Пример до и после." loading="lazy">
@@ -67,7 +67,7 @@
             </a>
           </li>
           <li class="works__item">
-            <a href="" class="works__link">
+            <a href="<?php echo get_category_link(10); ?>" data-category="10" class="works__link">
               <picture class="works__pictures">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste.jpg" width="269" height="162" alt="Икона &#34;Вознесение Господне&#34; написана на доске, порода дерева липа, в академическом стиле, масляная живопись. Икона выполнена для праздничного ряда иконостаса." loading="lazy">

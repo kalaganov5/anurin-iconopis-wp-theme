@@ -1,9 +1,5 @@
 <footer class="footer">
-	<a
-	<?php if ( !is_home() ) : ?>
-		href="<?php echo home_url('/') ?>"
-	<?php endif; ?> 
-	class="footer__logo logo-footer">
+	<a <?php if (!is_home()) : ?> href="<?php echo home_url('/') ?>" <?php endif; ?> class="footer__logo logo-footer">
 		<svg role="img" class="logo-footer__image" width="28" height="36">
 			<text class="visually-hidden" font-size="0">Иконописная мастерская Юрия Анурина.</text>
 			<use xlink:href="#icon-logo-church"></use>
@@ -56,7 +52,7 @@
 	);
 	?>
 	<div class="footer__copyright">
-		&#169; Ю. E. Анурин, <?php echo date_i18n ('Y'); ?>
+		&#169; Ю. E. Анурин, <?php echo date_i18n('Y'); ?>
 	</div>
 </footer>
 <div class="modal modal-success">
@@ -121,6 +117,17 @@
 		<?php echo do_shortcode('[contact-form-7 id="22" title="contact-form" html_class="contacts__form form" html_id="contact-form-modal"]'); ?>
 	</div>
 </div>
+<?php
+$works = new WP_Query(
+	array(
+		'post_type' => 'portfolio',
+		// 'cat' => 9,
+	)
+);
+
+// anurin_iconopis_degug($works);
+
+?>
 <div class="modal modal-portfolio">
 	<div class="modal-portfolio__content">
 		<button class="modal__close-button modal-portfolio__close-button" type="button">
@@ -130,71 +137,22 @@
 		</button>
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide" data-hash="portfolio-1">
-					<figure class="modal-portfolio__figure">
-						<picture>
-							<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/1.jpg" alt="" />
-						</picture>
-						<figcaption class="modal-portfolio__container-text">
-							<div class="modal-portfolio__text">
-								Пример описания работы. Описание в разработке.
-							</div>
-						</figcaption>
-					</figure>
-					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				</div>
-				<div class="swiper-slide" data-hash="portfolio-2">
-					<figure class="modal-portfolio__figure">
-						<picture>
-							<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/2.jpg" alt="" />
-						</picture>
-						<figcaption class="modal-portfolio__container-text">
-							<div class="modal-portfolio__text">
-								&#171;Порт-Артурская икона Божией Матери&#187;. Стиль написания иконы -академическая живопись. Данная икона, представленная на&#160;фотографии, была написана на&#160;основе оригинальной иконы, чудотворного образа Богородицы. Характерный вид иконы задает резьба по&#160;левкасу, выполненная в&#160;ручную, а&#160;затем покрыта сусальным золотом и&#160;прописана цветной эмалью. Русский художник иконописец, в&#160;1904&#160;году, впервые написал образ Порт-Артурской иконы Божией Матери. Реставрация иконы &#171;Св. Преподобный Серафим Саровский&#187; выполнена для Нижегородской епархии. Выполненны реставрационные процессы, которые вернули первоначальный вид произведению. Иконописная мастерская реставрирует храмовые, церковные иконы, а&#160;так&#160;же производиться реставрация домашних икон.
-							</div>
-						</figcaption>
-					</figure>
-					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				</div>
-				<div class="swiper-slide" data-hash="portfolio-3">
-					<figure class="modal-portfolio__figure">
-						<picture>
-							<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/3.jpg" alt="" />
-						</picture>
-						<figcaption class="modal-portfolio__container-text">
-							<div class="modal-portfolio__text">
-								Пример описания работы. Описание в разработке.
-							</div>
-						</figcaption>
-					</figure>
-					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				</div>
-				<div class="swiper-slide" data-hash="portfolio-4">
-					<figure class="modal-portfolio__figure">
-						<picture>
-							<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/4.jpg" alt="" />
-						</picture>
-						<figcaption class="modal-portfolio__container-text">
-							<div class="modal-portfolio__text">
-								Пример описания работы. Описание в разработке.
-							</div>
-						</figcaption>
-					</figure>
-					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				</div>
-				<div class="swiper-slide" data-hash="portfolio-5">
-					<figure class="modal-portfolio__figure">
-						<picture>
-							<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php echo get_template_directory_uri() ?>/assets/img/portfolio/5.jpg" alt="" />
-						</picture>
-						<figcaption class="modal-portfolio__container-text">
-							<div class="modal-portfolio__text">
-								Пример описания работы. Описание в разработке.
-							</div>
-						</figcaption>
-					</figure>
-					<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-				</div>
+				<?php
+				if ( $works->have_posts() ) : while ( $works->have_posts() ) : $works->the_post();?>
+					<div class="swiper-slide">
+						<figure class="modal-portfolio__figure">
+							<picture>
+								<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
+							</picture>
+							<figcaption class="modal-portfolio__container-text">
+								<div class="modal-portfolio__text">
+									<?php the_content(); ?>
+								</div>
+							</figcaption>
+						</figure>
+						<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+					</div>
+				<?php endwhile; endif; ?>
 			</div>
 			<button class="modal__button-pagination modal__button-pagination--prev" type="button">
 				<span class="visually-hidden">
@@ -222,4 +180,5 @@
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

@@ -3,6 +3,8 @@
 require __DIR__ . '/inc/anurin-iconopis-menu.php';
 require __DIR__ . '/inc/anurin-iconopis-menu-footer.php';
 require __DIR__ . '/inc/contact-form7-settings.php';
+require __DIR__ . '/inc/anurin-iconopis-portfolio.php';
+require __DIR__ . '/inc/anurin-iconopis-disable-emoji.php';
 
 // debug function
 function anurin_iconopis_degug ($array) {
