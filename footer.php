@@ -117,42 +117,32 @@
 		<?php echo do_shortcode('[contact-form-7 id="22" title="contact-form" html_class="contacts__form form" html_id="contact-form-modal"]'); ?>
 	</div>
 </div>
-<?php
-$works = new WP_Query(
-	array(
-		'post_type' => 'portfolio',
-		// 'cat' => 9,
-	)
-);
-
-// anurin_iconopis_degug($works);
-
-?>
-<div class="modal modal-portfolio">
-	<div class="modal-portfolio__content">
+<div class="modal modal-portfolio" id="portfolio-modal">
+</div>
+<?php wp_footer(); ?>
+<template id="template-portfolio-item">
+	<div class="swiper-slide">
+		<figure class="modal-portfolio__figure">
+			<picture>
+				<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="" alt="" />
+			</picture>
+			<figcaption class="modal-portfolio__container-text">
+				<div class="modal-portfolio__text">
+				</div>
+			</figcaption>
+		</figure>
+		<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+	</div>
+</template>
+<template id="template-portfolio-modal">
+	<div class="modal-portfolio__content" id="modal-portfolio-content">
 		<button class="modal__close-button modal-portfolio__close-button" type="button">
 			<span class="visually-hidden">
 				Закрыть
 			</span>
 		</button>
 		<div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-				<?php
-				if ( $works->have_posts() ) : while ( $works->have_posts() ) : $works->the_post();?>
-					<div class="swiper-slide">
-						<figure class="modal-portfolio__figure">
-							<picture>
-								<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" />
-							</picture>
-							<figcaption class="modal-portfolio__container-text">
-								<div class="modal-portfolio__text">
-									<?php the_content(); ?>
-								</div>
-							</figcaption>
-						</figure>
-						<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-					</div>
-				<?php endwhile; endif; ?>
+			<div class="swiper-wrapper" id="portfolio-sliders">
 			</div>
 			<button class="modal__button-pagination modal__button-pagination--prev" type="button">
 				<span class="visually-hidden">
@@ -176,9 +166,6 @@ $works = new WP_Query(
 			</p>
 		</div>
 	</div>
-</div>
-<?php wp_footer(); ?>
-
+</template>
 </body>
-
 </html>

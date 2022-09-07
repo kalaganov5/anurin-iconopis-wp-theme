@@ -20,6 +20,7 @@ function anurin_iconopos_portfolio(){
 
 		  ),
 		'public'             => true,
+		'show_in_rest'       => true,
 		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
