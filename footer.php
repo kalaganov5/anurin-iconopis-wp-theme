@@ -40,16 +40,18 @@
 		</li>
 	</ul>
 	<?php
-	wp_nav_menu(
-		array(
-			'theme_location' => 'menu_footer',
-			'container' => false,
-			'menu_class' => 'footer__link links-footer',
-			'menu_id' => 'footer-menu',
-			'depth' => 1,
-			'walker' => new Anurin_iconopis_menu_footer(),
-		),
-	);
+	if (has_nav_menu('menu_footer')) {
+		wp_nav_menu(
+			array(
+				'theme_location' => 'menu_footer',
+				'container' => false,
+				'menu_class' => 'footer__link links-footer',
+				'menu_id' => 'footer-menu',
+				'depth' => 1,
+				'walker' => new Anurin_iconopis_menu_footer(),
+			),
+		);
+	};
 	?>
 	<div class="footer__copyright">
 		&#169; Ю. E. Анурин, <?php echo date_i18n('Y'); ?>
@@ -124,7 +126,7 @@
 	<div class="swiper-slide">
 		<figure class="modal-portfolio__figure">
 			<picture>
-				<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="" alt=""/>
+				<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="" alt="" />
 			</picture>
 			<figcaption class="modal-portfolio__container-text">
 				<div class="modal-portfolio__text">
@@ -166,7 +168,8 @@
 		</div>
 		<div class="modal-portfolio__loader"></div>
 	</div>
-	
+
 </template>
 </body>
+
 </html>
