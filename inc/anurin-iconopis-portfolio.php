@@ -1,7 +1,4 @@
-
 <?php
-
-add_action('init', 'anurin_iconopos_portfolio');
 function anurin_iconopos_portfolio(){
 	register_post_type('portfolio', array(
 		'labels'             => array(
@@ -27,7 +24,7 @@ function anurin_iconopos_portfolio(){
 		'query_var'          => true,
 		'rewrite'            => true,
 		'capability_type'    => 'post',
-		'has_archive'        => false,
+		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
 		'supports'           => array('title','editor', 'thumbnail'),

@@ -168,7 +168,8 @@ add_action( 'widgets_init', 'anurin_iconopis_widgets_init' );
 function anurin_iconopis_scripts() {
 	wp_enqueue_style('anurin_iconopis_main', get_template_directory_uri() . '/assets/css/style.css', array(), false);
 	wp_enqueue_style('anurin_iconopis_style_wordpress', get_template_directory_uri() . '/assets/css/style-wordpress.css', array(), false);
-	wp_enqueue_script('anurin_iconopis_script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
+// 	wp_enqueue_script('anurin_iconopis_script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
+	wp_enqueue_script('anurin_iconopis_script_bundle', get_template_directory_uri() . '/assets/js/bundle.min.js', array(), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'anurin_iconopis_scripts' );
 
@@ -198,3 +199,25 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+add_action('init', 'anurin_iconopos_portfolio');
+
+// custom url in sitemap rankmath
+add_action( 'rank_math/sitemap/{$type}_content', function() {
+    return '<url><loc>/</loc><lastmod>2022-08-28T07:43:59+00:00</lastmod></url>';
+});
+
+/*  DISABLE GUTENBERG STYLE IN HEADER| WordPress 5.9
+https://wordpress.org/support/topic/how-to-disable-inline-styling-style-idglobal-styles-inline-css/
+*/
+
+// Remove Global Styles and SVG Filters from WP 5.9.1 - 2022-02-27
+function remove_global_styles_and_svg_filters() {
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+}
+add_action('init', 'remove_global_styles_and_svg_filters');
+
+// This snippet removes the Global Styles and SVG Filters that are mostly if not only used in Full Site Editing in WordPress 5.9.1+
+// Detailed discussion at: https://github.com/WordPress/gutenberg/issues/36834
+// WP default filters: https://github.com/WordPress/WordPress/blob/7d139785ea0cc4b1e9aef21a5632351d0d2ae053/wp-includes/default-filters.php

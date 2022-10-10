@@ -24,7 +24,7 @@ add_filter( 'wpcf7_form_elements', 'imp_wpcf7_form_elements' );
 function imp_wpcf7_form_elements( $content ) {
     $str_pos = strpos( $content, 'name="phone"' );
     if ( $str_pos !== false ) {
-        $content = substr_replace( $content, 'data-tel-input=""', $str_pos, 0 );
+        $content = substr_replace( $content, 'data-tel-input="" ', $str_pos, 0 );
     }
     return $content;
 }
@@ -35,3 +35,26 @@ function custom_filter_wpcf7_is_tel( $result, $tel ) {
 	return $result; 
   }
 add_filter( 'wpcf7_is_tel', 'custom_filter_wpcf7_is_tel', 10, 2 );
+
+/*
+ * Disable CF7 Refill
+ * https://gist.github.com/Asikur22/e2bdcd7da7b35ad63bbb90fb1e646f14
+ */
+function aa_disable_wpcf7_refill() {
+	global $wp_scripts;
+	$handle      = 'contact-form-7';
+	$object_name = 'wpcf7';
+	$data        = $wp_scripts->get_data( $handle, 'data' );
+	if ( ! empty( $data ) ) {
+		if ( ! is_array( $data ) ) {
+			$data = json_decode( str_replace( 'var ' . $object_name . ' = ', '', substr( $data, 0, - 1 ) ), true );
+		}
+		foreach ( $data as $key => $value ) {
+			$localized_data[ $key ] = $value;
+		}
+		unset($localized_data['cached']);
+		$wp_scripts->add_data( $handle, 'data', '' );
+		wp_localize_script( $handle, $object_name, $localized_data );
+	}
+}
+add_action( 'wpcf7_enqueue_scripts', 'aa_disable_wpcf7_refill' );

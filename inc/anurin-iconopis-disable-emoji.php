@@ -14,7 +14,7 @@ function disable_emojis() {
 	
 	// Remove from TinyMCE
 	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
-}
+};
 add_action( 'init', 'disable_emojis' );
 
 /**
@@ -26,4 +26,4 @@ function disable_emojis_tinymce( $plugins ) {
 	} else {
 		return array();
 	}
-}
+};

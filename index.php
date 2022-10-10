@@ -25,8 +25,9 @@
         </p>
         <ul class="portfolio__cards works">
           <li class="works__item">
-            <a href="<?php echo get_category_link(8); ?>" data-category="8" class="works__link">
+            <a href="<?php echo get_post_type_archive_link('portfolio'); ?>" data-category="8" class="works__link">
               <picture class="works__pictures">
+				<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei@2x.webp 2x" type="image/webp">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-i-cerkvei.jpg" width="269" height="162" alt="Роспись в церкви Феодоровской иконы Божией Матери, город Ковров. Изображение пророков отличается закономерной последовательностью иконописных образов. Роспись внутри храма выполнена с применением акриловой и масляной краски." loading="lazy">
               </picture>
@@ -39,8 +40,9 @@
             </a>
           </li>
           <li class="works__item">
-            <a href="<?php echo get_category_link(7); ?>" data-category="7" class="works__link">
+            <a href="<?php echo get_post_type_archive_link('portfolio'); ?>" data-category="6" class="works__link">
               <picture class="works__pictures">
+				<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon@2x.webp 2x" type="image/webp">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/usluga-napisanie-ikon.jpg" width="269" height="162" alt="Икона &#34;Спас в Силах&#34; написана в академическом стиле живописи. Этапы написания иконы, в авторском исполнении, требуют разработки большого количества эскизов. Русская иконопись имеет много примеров изображения иконы &#34;Спас в Силах&#34;." loading="lazy">
               </picture>
@@ -53,8 +55,9 @@
             </a>
           </li>
           <li class="works__item">
-            <a href="<?php echo get_category_link(9); ?>" data-category="9" class="works__link">
+            <a href="<?php echo get_post_type_archive_link('portfolio'); ?>" data-category="3" class="works__link">
               <picture class="works__pictures">
+				<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon@2x.webp 2x" type="image/webp">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/usluga-resvraciya-icon.jpg" width="269" height="162" alt="Отрестоврированная икона Юрием Ануриным. Пример до и после." loading="lazy">
               </picture>
@@ -67,8 +70,9 @@
             </a>
           </li>
           <li class="works__item">
-            <a href="<?php echo get_category_link(10); ?>" data-category="10" class="works__link">
+            <a href="<?php echo get_post_type_archive_link('portfolio'); ?>" data-category="7" class="works__link">
               <picture class="works__pictures">
+				<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste@2x.webp 2x" type="image/webp">
                 <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste@2x.jpg 2x">
                 <img class="works__image" src="<?php echo get_template_directory_uri() ?>/assets/img/usluga-pravoslavnay-jivopis-na-holste.jpg" width="269" height="162" alt="Икона &#34;Вознесение Господне&#34; написана на доске, порода дерева липа, в академическом стиле, масляная живопись. Икона выполнена для праздничного ряда иконостаса." loading="lazy">
               </picture>
@@ -146,18 +150,21 @@
               <ul class="service__gallery">
               <li class="service__gallery-item">
                 <picture>
+					<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon@2x.webp 2x" type="image/webp">
                   <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon@2x.jpg 2x">
                   <img src="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon.jpg" alt="&#34;Иерусалимская икон Божией Матери&#34;, написана в стиле академическая живопись для Покровско-Всехсвятского храма города Алматы. Икона написана в технике масляная живопись, живописная имитация металлического оклада. Список иконы выполнен с изображения оригинальной иконы находящейся в храме Успения Пресвятой Богородицы в Иерусалиме. Размер иконы 85 х120 см." width="107" height="153" class="service__gallery-image" loading="lazy">
                 </picture>
               </li>
               <li class="service__gallery-item">
                 <picture>
-                  <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-man.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-man@2x.jpg 2x">
-                  <img src="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-man.jpg" alt="Икона &#34;Святой Севастьян Карагандинский&#34; выполнена в технике масляная живопись. Фон иконы покрыт сусальным золотом. Доска под икону выполнена с ковчегом. Икона написана для Екатеринбургской епархии." width="121" height="153" class="service__gallery-image" loading="lazy">
+				  <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/spas-nerukotvornyj.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/spas-nerukotvornyj@2x.webp 2x" type="image/webp">
+                  <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/spas-nerukotvornyj.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/spas-nerukotvornyj@2x.jpg 2x">
+                  <img src="<?php echo get_template_directory_uri() ?>/assets/img/spas-nerukotvornyj.jpg" alt="«Спас Нерукотворный», икона написана для частной коллекции. Золочение сусальным золотом - это сложный технологический процесс, который происходит с полной концентрацией внимания, и требует отлаженных движений при нанесении листового золота." width="210" height="250" class="service__gallery-image" loading="lazy">
                 </picture>
               </li>
               <li class="service__gallery-item">
                 <picture>
+				  <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-3.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-3@2x.webp 2x" type="image/webp">
                   <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-3.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-3@2x.jpg 2x">
                   <img src="<?php echo get_template_directory_uri() ?>/assets/img/napisanie-icon-3.jpg" alt="&#34;Порт-Артурская икона Божией Матери&#34;. Стиль написания иконы - академическая живопись. Данная икона, представленная на фотографии, была написана на основе оригинальной иконы, чудотворного образа Богородицы. Характерный вид иконы задает резьба по левкасу, выполненная в ручную, а затем покрыта сусальным золотом и прописана цветной эмалью. Русский художник иконописец, в 1904 году, впервые написал образ Порт-Артурской иконы Божией Матери." width="281" height="516" class="service__gallery-image" loading="lazy">
                 </picture>
@@ -206,8 +213,10 @@
               <ul class="service__gallery">
                 <li class="service__gallery-item">
                   <picture>
+					<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-pc.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-pc@2x.webp 2x" media="(min-width: 1200px)" type="image/webp">
                     <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-pc.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov-pc@2x.jpg 2x" media="(min-width: 1200px)">
-                    <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov@2x.jpg 2x">
+					<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov@2x.webp 2x" type="image/webp">
+                    <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov@2x.jpg 2x" type="image/jpeg">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/rospis-hramov.jpg" alt="Требуется роспись храма? Иконописная мастерская Юрия Анурина выполняет роспись храма, церковно-историческая живопись, реставрация икон, портрет священнослужителя." width="270" height="201" class="service__gallery-image" loading="lazy">
                   </picture>
                 </li>
@@ -245,12 +254,14 @@
               <ul class="service__gallery">
               <li class="service__gallery-item">
                 <picture>
+				  <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-before.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-before@2x.webp 2x" type="image/webp">
                   <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-before.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-before@2x.jpg 2x">
                   <img src="<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-before.jpg" alt="Фотография до начала работ. Реставрация иконы &#34;Св. Преподобный Серафим Саровский&#34; выполнена для Нижегородской епархии. Выполнены реставрационные процессы, которые вернули первоначальный вид произведению. Иконописная мастерская реставрирует храмовые, церковные иконы, а так же производиться реставрация домашних икон." width="136" height="176" class="service__gallery-image" loading="lazy">
                 </picture>
               </li>
               <li class="service__gallery-item">
                 <picture>
+				  <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-after.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-after@2x.webp 2x" type="image/webp">
                   <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-after.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-after@2x.jpg 2x">
                   <img src="<?php echo get_template_directory_uri() ?>/assets/img/restavraciya-icon-i-jivopis-after.jpg" alt="Фотография после работ. Реставрация иконы &#34;Св. Преподобный Серафим Саровский&#34; выполнена для Нижегородской епархии. Выполнены реставрационные процессы, которые вернули первоначальный вид произведению. Иконописная мастерская реставрирует храмовые, церковные иконы, а так же производиться реставрация домашних икон." width="136" height="176" class="service__gallery-image" loading="lazy">
                 </picture>
@@ -308,6 +319,7 @@
               <ul class="service__gallery">
                 <li class="service__gallery-item">
                   <picture>
+					<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/cerkovno-istoricheskaya-zhivopis-rozhdestvo-hristovo.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/cerkovno-istoricheskaya-zhivopis-rozhdestvo-hristovo@2x.webp 2x" type="image/webp">
                     <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/cerkovno-istoricheskaya-zhivopis-rozhdestvo-hristovo.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/cerkovno-istoricheskaya-zhivopis-rozhdestvo-hristovo@2x.jpg 2x">
                     <img src="<?php echo get_template_directory_uri() ?>/assets/img/cerkovno-istoricheskaya-zhivopis-rozhdestvo-hristovo.jpg" alt="Церковно-историческая живопись &#34;Рождество Христово&#34; выполнено по заказу Московской епархии. Художники жанровой живописи часто работают над созданием картин на религиозную тематику." width="214" height="286" class="service__gallery-image" loading="lazy">
                   </picture>
@@ -369,9 +381,10 @@
             </a>
           </li>
         </ul>
-        <?php echo do_shortcode('[contact-form-7 id="22" title="contact-form" html_class="contacts__form form" html_id="contact-form"]'); ?>
+        <?php echo do_shortcode('[contact-form-7 id="8" title="contact-form" html_class="contacts__form form" html_id="contact-form"]'); ?>
         <div class="contacts__images">
           <picture class="contacts__picture">
+			<source srcset="<?php echo get_template_directory_uri() ?>/assets/img/anurin-yurii.webp 1x,<?php echo get_template_directory_uri() ?>/assets/img/anurin-yurii@2x.webp 2x" type="image/webp">
             <source srcset="<?php echo get_template_directory_uri() ?>/assets/img/anurin-yurii.jpg 1x,<?php echo get_template_directory_uri() ?>/assets/img/anurin-yurii@2x.jpg 2x">
             <img class="contacts__image" width="368" height="490" src="<?php echo get_template_directory_uri() ?>/assets/img/anurin-yurii.jpg" alt="&#34;Введение во храм Пресвятой Богородицы&#34; роспись храма выполнена в стиле &#34;академическая живопись&#34;. Данная композиция раскрывает исключительное место в христианской иконографии, свидетельствуя о значении Пресвятой Богородицы в жизни Церкви. Почитание Богородицы основывается на догмате о Боговоплощение. Создание академической живописи - это трудоемкий процесс с большим количеством этапов. Работа начинается с рисунка, художник создает композиционное равновесие в заданном формате, с помощью изображения фигур и интерьерных элементов, с помощью живописного &#34;подмалевка&#34; в виде краски охристых оттенков." loading="lazy"/>
           </picture>
