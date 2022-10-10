@@ -114,7 +114,7 @@
 				</a>
 			</li>
 		</ul>
-		<?php echo do_shortcode('[contact-form-7 id="22" title="contact-form" html_class="contacts__form form" html_id="contact-form-modal"]'); ?>
+		<?php echo do_shortcode('[contact-form-7 id="73" title="contact-form" html_class="contacts__form form" html_id="contact-form-modal"]'); ?>
 	</div>
 </div>
 <div class="modal modal-portfolio" id="portfolio-modal">
@@ -124,14 +124,13 @@
 	<div class="swiper-slide">
 		<figure class="modal-portfolio__figure">
 			<picture>
-				<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="" alt="" />
+				<img class="modal-portfolio__image swiper-lazy" src="<?php echo get_template_directory_uri() ?>/assets/img/blank.png" width="0" height="0" data-src="" alt=""/>
 			</picture>
 			<figcaption class="modal-portfolio__container-text">
 				<div class="modal-portfolio__text">
 				</div>
 			</figcaption>
 		</figure>
-		<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
 	</div>
 </template>
 <template id="template-portfolio-modal">
@@ -165,7 +164,9 @@
 				Тел.: <a href="tel:+79045914599" class="modal-portfolio__contact-link contacts__link">8 904 591-45-99</a>
 			</p>
 		</div>
+		<div class="modal-portfolio__loader"></div>
 	</div>
+	
 </template>
 </body>
 </html>
