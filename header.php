@@ -2,14 +2,29 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="<?php echo get_template_directory_uri() ?>/assets/img/icon-favicon.svg">
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="<?php echo get_template_directory_uri() ?>/assets/img/icon-favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/assets/img/favicon/apple-icon-180x180.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri() ?>/assets/img/favicon/manifest.json">
+  <meta name="theme-color" content="#759454">
 	<?php wp_head(); ?>
+	<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-5PK4PDQ');</script>
+	<!-- End Google Tag Manager -->
 </head>
 
 <body <?php body_class('body'); ?>>
 	<?php wp_body_open(); ?>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PK4PDQ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<svg width="0" height="0" class="hidden">
 		<symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516 51" id="icon-logo-anurin-Iconopis">
 			<path d="M2.659 50.378V34.802c-.59-.331-1.414-1.148 0-1.767-1.252-.847-3.005-2.96 0-4.64l.663-.442.884-1.104.883-1.105.442-.773.11-.331v-1.437h-.33v-.33h.33v-4.53H3.654v-.552h1.989v-2.872h.441" stroke="#fff"></path>
@@ -72,7 +87,7 @@
 				<use xlink:href="#icon-logo-anurin-Iconopis"></use>
 			</svg>
 		</a>
-		<nav class="header__nav">
+				<nav class="header__nav">
 			<div class="header__hamburger hamburger">
 				<button class="hamburger__button" id="header-menu-toggle" type="button">
 					<span class="hamburger__button--line visually-hidden">
@@ -84,16 +99,29 @@
 				</button>
 			</div>
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu_header_start_page',
-					'container' => false,
-					'menu_class' => 'header__menu navigation',
-					'menu_id' => 'main-navigation',
-					'depth' => 1,
-					'walker' => new Anurin_iconopis_menu(),
-				),
-			)
+			if ( is_home() ) {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu_header_start_page',
+						'container' => false,
+						'menu_class' => 'header__menu navigation',
+						'menu_id' => 'main-navigation',
+						'depth' => 1,
+						'walker' => new Anurin_iconopis_menu(),
+					),
+				);
+			} else {
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu_header',
+						'container' => false,
+						'menu_class' => 'header__menu navigation',
+						'menu_id' => 'main-navigation',
+						'depth' => 1,
+						'walker' => new Anurin_iconopis_menu(),
+					),
+				);
+			};
 			?>
 		</nav>
 	</header>
