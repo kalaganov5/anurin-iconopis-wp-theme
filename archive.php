@@ -9,11 +9,6 @@
 
 get_header();
 ?>
-    <div class="alert">
-      <p class="alert__text paragraph">
-        <span class="alert__note">Внимание:</span> Страница находиться на оформление, скоро всё будет. Смотреть портфолио <a href="https://anurin-iconopis.ru/#portfolio" class="alert__link">здесь</a>
-      </p>
-    </div>
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -51,5 +46,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

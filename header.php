@@ -87,7 +87,7 @@
 		</symbol>
 	</svg>
 	<header class="header">
-		<a <?php if (!is_home()) : ?> href="<?php echo home_url('/') ?>" <?php endif; ?> class="header__logo logo-header">
+		<a <?php if (!is_home() && !is_front_page())  : ?> href="<?php echo home_url('/') ?>" <?php endif; ?> class="header__logo logo-header">
 			<svg role="img" class="logo-header__image" width="515" height="50">
 				<text class="visually-hidden" font-size="0">Иконописная мастерская Юрия Анурина.</text>
 				<use xlink:href="#icon-logo-anurin-Iconopis"></use>

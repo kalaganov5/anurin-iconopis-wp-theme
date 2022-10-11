@@ -6,7 +6,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 4.5
 Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -32,6 +32,9 @@ Painter Yuriy Anurin includes support for WooCommerce and for Infinite Scroll in
 
 = 1.0 - May 12 2015 =
 * Initial release
+
+= 1.0 - October 11 2022 =
+* release site blog
 
 == Credits ==
 

@@ -21,7 +21,7 @@ function anurin_iconopis_degug ($array) {
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 // Enqueue Javascript With Type Module
@@ -167,6 +167,7 @@ add_action( 'widgets_init', 'anurin_iconopis_widgets_init' );
  */
 function anurin_iconopis_scripts() {
 	wp_enqueue_style('anurin_iconopis_main', get_template_directory_uri() . '/assets/css/style.css', array(), false);
+	wp_enqueue_style('anurin_iconopis_theme', get_template_directory_uri() . '/style.css', array(), false);
 	wp_enqueue_style('anurin_iconopis_style_wordpress', get_template_directory_uri() . '/assets/css/style-wordpress.css', array(), false);
 // 	wp_enqueue_script('anurin_iconopis_script', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
 	wp_enqueue_script('anurin_iconopis_script_bundle', get_template_directory_uri() . '/assets/js/bundle.min.js', array(), false, true);
@@ -213,7 +214,7 @@ https://wordpress.org/support/topic/how-to-disable-inline-styling-style-idglobal
 
 // Remove Global Styles and SVG Filters from WP 5.9.1 - 2022-02-27
 function remove_global_styles_and_svg_filters() {
-	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+	// remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 }
 add_action('init', 'remove_global_styles_and_svg_filters');
@@ -221,3 +222,14 @@ add_action('init', 'remove_global_styles_and_svg_filters');
 // This snippet removes the Global Styles and SVG Filters that are mostly if not only used in Full Site Editing in WordPress 5.9.1+
 // Detailed discussion at: https://github.com/WordPress/gutenberg/issues/36834
 // WP default filters: https://github.com/WordPress/WordPress/blob/7d139785ea0cc4b1e9aef21a5632351d0d2ae053/wp-includes/default-filters.php
+
+/**
+ * Register theme support for Rank Math breadcrumbs
+ */
+add_theme_support('rank-math-breadcrumbs');
+
+
+## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
+add_filter('get_the_archive_title', function ($title) {
+	return preg_replace('~^[^:]+: ~', '', $title);
+});
